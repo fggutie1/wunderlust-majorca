@@ -303,6 +303,11 @@ header img{
 	height: 100px;
 }
 
-#names input {
-	border: solid 3px --purple;
+input {
+    display: block;
+    width: 310px;
+    height: 20px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    border: 1px #9B26B0;
 }

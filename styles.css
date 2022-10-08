@@ -1,0 +1,308 @@
+<!-- Felicia Gutierrez-->
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+:root{
+	--yellow: #F6D64A;
+	--teal: #55BCD5;
+	--purple: #9B26B0;
+	--blue: #499bd2;
+	--dark-grey: #222222;
+	--light-grey: #EAEAEA;
+	--white: #fff;
+	--black:#000;
+}
+
+h1, h2, h3{
+	font-family: Molle, Georgia, 'Times New Roman', Times, serif;
+	font-size: 2em;
+}
+
+h4, p, q, small, nav, button, form{
+	font-family: Montserrat, Georgia, 'Times New Roman', Times, serif;
+
+}
+
+h4{
+	font-weight: 600;
+}
+
+.sr-only {
+	position:absolute;
+	left:-10000px;
+	top:auto;
+	width:1px;
+	height:1px;
+	overflow:hidden;
+}
+
+#skip
+{
+position:absolute;
+left:-10000px;
+top:auto;
+width:1px;
+height:1px;
+overflow:hidden;
+}
+ 
+#skip:focus
+{
+position:static;
+width:auto;
+height:auto;
+}
+
+header {
+	padding:10px;
+	display: grid;
+	grid-template-columns: 1fr 2fr;
+	grid-template-rows: 2fr 1fr 2fr;
+	gap: 1em;
+	overflow: hidden;
+	background-image: linear-gradient(#499bd2, #fff);
+}
+
+#menu-toggle {
+	display: block; 
+	text-align: center;
+	z-index: 1;  
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+}
+
+#menu-toggle a {
+	text-decoration: none;
+	color: var(--black);
+	-webkit-transition: color 0.3s ease;
+	-o-transition: color 0.3s ease;
+	transition: color 0.3s ease;
+}
+
+#menu-toggle a:hover {
+	color: white;
+	background-color: #000;
+}
+
+
+/* The hamburger button hidden inside an input element */
+#menu-toggle input {
+	display: block;
+	width: 200px;
+	height: 50px;
+	position: absolute;  
+	padding: 0;
+	cursor: pointer;  
+	opacity: 0; /* hide this */
+	z-index: 2; /* and place it over the hamburger */  
+	-webkit-touch-callout: none;
+}
+
+#menu-toggle label {
+	background: var(--yellow);
+	text-align: center;
+	width: 200px;
+	height: 50px;
+	margin: auto;
+	display: block;
+	position: relative;
+	font-size: 1rem;
+	font-weight: 600;
+	z-index: 1;  
+	-webkit-transform-origin: 4px 0px;  
+	-ms-transform-origin: 4px 0px;  
+	transform-origin: 4px 0px;
+	-webkit-transition: all 0.3s ease;
+	-o-transition: all 0.3s ease;
+	transition: all 0.3s ease;
+}
+
+
+/* 
+* Change the color of the hamburger when toggled
+*/
+#menu-toggle input:checked + label{
+	color: white;
+	background-color: #000;
+}
+  
+  /*
+   * Use absolute positioning to place the menu off-screen
+   */
+ul {
+	position: absolute;
+	max-width: 375px;
+	margin: -100px 0 0 -50px;
+	padding: 50px;
+	padding-top: 125px;
+	background: var(--blue);
+	list-style-type: none;
+	/* Hide the menu off-screen to the right */
+	right: -100%;
+	-webkit-transition: right 0.3s ease;
+	-o-transition: right 0.3s ease;
+	transition: right 0.3s ease; 
+}
+  
+ul li {
+	padding: 10px 0;
+	font-size: 22px;
+}
+  
+  /*
+   * Slide the menu in from right when the input is checked
+   */
+#menu-toggle input:checked ~ ul {
+	right: 0;
+}
+
+nav {
+	grid-column-start: 2;
+	grid-column-end: 3; 
+	grid-row-start: 1;
+	background-color: var(--yellow);
+}
+
+h1, header p {
+	grid-column: 1 / -1;
+}
+
+header img{
+	max-width: 100%;
+}
+#intro{
+	display: flex;
+	flex-direction: column;
+	max-width: 375px;
+	gap: 1em;
+}
+
+#intro h2, #intro p{
+	padding: 10px
+}
+
+#img-grid {
+	display: grid;
+	grid-template-rows: 3fr 3fr 3fr;
+	gap: 1em;
+	overflow: hidden;
+}
+
+#plan {
+	display: grid;
+	grid-template-rows: .5fr 95%;
+	padding: 10px;
+	background-color: var(--yellow);
+	justify-content: center;
+	gap: 1em;
+	margin-top: 20px;
+	margin-bottom: 20px;
+}
+#plan h3 {
+	text-align:center;
+}
+
+#plan section {
+	background-color: var(--teal);
+	margin: 20px;
+	border:solid 5px white;
+	border-radius: 10px;
+	padding: 10px;
+	text-align: center;
+}
+
+#plan img{
+	margin: 10px;
+}
+
+#testimonials div{
+	display: grid;
+	grid-template-rows: repeat(4, 1fr);
+	max-width: 375px;
+	gap: 1em;
+	padding:10px;
+}
+
+#testimonials{
+	text-align: center;
+	padding:10px;
+}
+
+#about{
+	background-color: var(--blue);
+	max-width: 375px;
+}
+
+#about div{
+	display: grid;
+	grid-template-columns: 45% 55%;
+	grid-template-rows: 1fr 1fr;
+	margin: 10px;
+	justify-content: center;
+	max-width: 375px;
+	gap: 1em;
+	padding: 20px;
+} 
+
+#about section{
+	text-align: center;
+	width: 100%;
+	
+}
+
+#about img{
+	max-width: 100px;
+	height: 100px;
+}
+
+#names input {
+	border: solid 3px --purple;
+}
